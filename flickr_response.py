@@ -17,7 +17,7 @@ class Photo:
 
         self.id = photo['id']
         self.title = photo['title']['_content']
-        self.url = photo['urls']['url'][0]['_content']
+        
 
     def __str__(self):
         return '{0} by {1} ({0})'.format(self.title, self.username)
@@ -25,8 +25,9 @@ class Photo:
     def __repr__(self):
         return """Title: {0}
 Author: {1}
-URL: {2}
-ID: {3}""".format(self.title, self.username, self.url, self.id)
+ID: {2}
+Content: {3}
+""".format(self.title, self.username, self.id, self.tags)
 
     def __contains__(self, tag_name):
         # if 'string x' in object: do something
